@@ -42,6 +42,8 @@ figure, header, nav, section, article, aside, footer, figcaption {
   outline: 0;
 }
 
+
+
 .clearfix:after {
   content: ".";
   display: block;
@@ -89,6 +91,31 @@ html, body {
 
 a {
   text-decoration: none !important;
+}
+
+h1 {
+  font-size: 3.2rem; /* Tamaño por defecto */
+}
+
+h1 em {
+  font-style: italic;
+  color: #555; /* Color para el texto en <em> */
+}
+
+/* Estilo para pantallas pequeñas */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 1.7rem; /* Tamaño más pequeño para dispositivos móviles */
+      line-height: 40px; 
+  }
+}
+
+/* Estilo para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  h1 {
+      font-size: 1.5rem; /* Aún más pequeño en dispositivos más compactos */
+      line-height: 40px; 
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -257,6 +284,66 @@ header
 .background-header .nav li a.active {
   color: #fba70b!important;
 }
+/* Estilos generales del menú */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+/* Estilo de los submenús */
+.submenu {
+  display: none; /* Ocultamos los submenús por defecto */
+  list-style-type: none;
+  padding-left: 20px;
+  margin-top: 5px;
+  background-color: #ffffff;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0; /* Alinea el submenú a la izquierda del item */
+  top: 100%; /* Aparece justo debajo del item */
+  transform: translateY(-20px); /* Empuja el submenú hacia arriba */
+  opacity: 0; /* Hace que el submenú sea invisible */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Animación de deslizamiento */
+}
+
+/* Mostramos el submenú al pasar el mouse sobre el li principal */
+.scroll-to-section:hover .submenu {
+  display: block;
+  transform: translateY(0); /* Mueve el submenú a su posición original */
+  opacity: 1; /* Hace visible el submenú */
+}
+
+/* Estilo de los elementos del submenú */
+.submenu li {
+  padding: 8px 0;
+}
+
+/* Estilo para los enlaces en los submenús */
+.submenu li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Estilo para el hover sobre los enlaces */
+.submenu li a:hover {
+  color: #007bff;
+}
+
+/* Media Queries para móviles */
+@media (max-width: 768px) {
+  .scroll-to-section {
+      font-size: 14px; /* Reducir tamaño del texto */
+  }
+
+  .submenu {
+      width: 150px; /* Ajustar el tamaño en móviles */
+  }
+}
+
+
 
 .header-area {
   position: absolute;
@@ -704,8 +791,8 @@ welcome
 
 .welcome-area .header-text h1 {
   font-weight: 900;
-  font-size: 52px;
-  line-height: 80px;
+ 
+ 
   letter-spacing: 1px;
   margin-bottom: 30px;
   color: #191a20;
