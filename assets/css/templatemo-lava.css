@@ -381,7 +381,7 @@ ul {
 .header-area .main-nav .nav {
   float: left;
   margin-top: 27px;
-  margin-left: 15%;
+  
   margin-right: 0px;
   background-color: #fff;
   padding: 0px 20px;
@@ -954,7 +954,7 @@ promotion
 
 #promotion .right-text img {
   display: inline-block;
-  float: left;
+ 
   margin-right: 30px;
 }
 
